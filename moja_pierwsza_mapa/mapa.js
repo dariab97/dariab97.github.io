@@ -12,12 +12,29 @@ $(document).ready(function () {
     version: "1.1.1",
   });
 
+  // dodaje własną kompozycję
+  let kompozycja = L.tileLayer.wms("http://127.0.0.1:8080/KOMPOZYCJA_D_R_L_B/prge/wms", {
+    layers: "KOMPOZYCJA_D_R_L_B",
+    format: "image/png",
+    transparent: "true",
+    version: "1.1.1",
+  }); 
+
+
   // obsługa warstw
   let baseMaps = {
     "dane z OSM": adresOSM,
     "moje dane": mojeDane,
+    kompozycja: kompozycja
   };
-  L.control.layers(baseMaps).addTo(mymap);
+
+    // obsługa warstw
+    let overlays = {
+      "dane z OSM": adresOSM,
+      "moje dane": mojeDane,
+    };
+
+  L.control.layers(baseMaps, overlays).addTo(mymap);
 
   mymap.addLayer(adresOSM);
 
