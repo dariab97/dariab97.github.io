@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Programowanie Geoportali</title>
+    <meta
+      name="description"
+      content="Strona edukacyjna poświącona
+         analizom terenu stanowiąca część projektu"
+    />
+    <meta
+      name="keywords"
+      content="geodezja, geoinformatyka, topografia, kartografia"
+    />
+    <meta name="author" content="Daria" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./mapa.css" />
+
+    <link rel="stylesheet" href="../lib/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="../main.css" />
+  </head>
+  <body>
+    <header>
+      <div id="logotyp">
+        <h1 class="logo">
+          <span style="color: #2a5daf">PRO</span>GRAMOWANIE
+          <span style="color: #2a5daf"> GEO</span>portali
+        </h1>
+      </div>
+    </header>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">Strona główna</a></li>
+        <li><a href="#">O projekcie</a></li>
+        <li><a href="#">Materiały</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+    <!-- tutaj zaczyna się treść strony  -->
+    <div class="container">
+      <h2>Aktualności z wojny na Ukrainie</h2>
+      <!-- dodanie guzika -->
+      <button id="button_open_modal">add</button>
+      <!-- wystylizować modala -->
+      <div class="modalBox">
+        <button class="button_close_modal">X</button>
+
+        <from id ="modal_do_wprowadzania_danych">
+        <h2>Dodaj aktualność</h2>          
+          <label for="object_id">Id:</label> <br />
+          <input type="text" id="object_id" name="object_id" value="CIV999" />
+          <br /><br />
+          <label for="object_date">Date:</label> <br />
+          <input type="text" id="object_date" name="object_date" value="02/26/2022" />
+          <br /><br />
+          <label for="object_lat">Latitude:</label> <br />
+          <input type="text" id="object_lat" name="object_lat" value="51.77667" />
+          <br /><br />
+          <label for="object_lng">Longitude:</label> <br />
+          <input type="text" id="object_lng" name="object_lng" value="19.45472" />
+          <br /><br />
+          <label for="object_location">Location:</label> <br />
+          <input type="text" id="object_location" name="object_location" value="Łódź" />
+          <br /><br />
+          <label for="object_description">Description:</label> <br />
+          <input type="text" id="object_description" name="object_description" value="Uchodźcy przybyli do Łodzi" />
+          <br /><br />
+          <label for="object_sources">Sources:</label> <br />
+          <input type="text" id="object_sources" name="object_sources" value="https://dzienniklodzki.pl" />
+          <br /><br />
+          <button type="submit" value="submit" id="data_save">Zapisz</button>
+        </from>
+      </div>
+
+<!-- modal do edycji danych -->
+      <div class="modalBox_edit">
+        <button class="button_close_modal">X</button>
+
+        <from id ="modal_do_wprowadzania_danych">
+        <h2>Edytuj aktualność</h2>          
+          <label for="object_id">Id:</label> <br />
+          <input type="text" id="object_id_edit" name="object_id" value="CIV999" />
+          <br /><br />
+          <label for="object_date">Date:</label> <br />
+          <input type="text" id="object_date_edit" name="object_date" value="02/26/2022" />
+          <br /><br />
+          <label for="object_lat">Latitude:</label> <br />
+          <input type="text" id="object_lat_edit" name="object_lat" value="51.77667" />
+          <br /><br />
+          <label for="object_lng">Longitude:</label> <br />
+          <input type="text" id="object_lng_edit" name="object_lng" value="19.45472" />
+          <br /><br />
+          <label for="object_location">Location:</label> <br />
+          <input type="text" id="object_location_edit" name="object_location" value="Łódź" />
+          <br /><br />
+          <label for="object_description">Description:</label> <br />
+          <input type="text" id="object_description_edit" name="object_description" value="Uchodźcy przybyli do Łodzi" />
+          <br /><br />
+          <label for="object_sources">Sources:</label> <br />
+          <input type="text" id="object_sources_edit" name="object_sources" value="https://dzienniklodzki.pl" />
+          <br /><br />
+          <button type="submit" value="submit" id="save_edits">Zapisz zmiany</button>
+          <button type="submit" value="submit" class="button_close_modal">Odrzuć zmiany</button>
+
+        </from>
+      </div>
+
+      <div id="lista">
+        <div id="obiekty"></div>
+        <!--to dodane -->
+      </div>
+
+      <div id="mymap"></div>
+    </div>
+    <!--to przesunięte z dołu -->
+    <div class="sliderContainer">
+      <input
+        type="range"
+        min="1"
+        max="30"
+        value="10"
+        class="slider"
+        id="myRange"
+      />
+    </div>
+
+    <script src="../lib/leaflet/leaflet.js"></script>
+    <script src="../lib/jquery-3.6.0.js"></script>
+    <script src="./mapa.js"></script>
+    <script src="./aktualnosci.js"></script>
+  </body>
+</html>
