@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Zamki obronne w Polsce</title>
+    <meta
+      name="description"
+      content="Strona edukacyjna poświęcona lokalizacji i charakterystyce zamków obronnych w Polsce"
+    />
+    <meta name="keywords" content="zamek, obronny, ruiny, pałac" />
+    <meta name="author" content="Daria" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./mapa_zamki.css" />
+
+    <link rel="stylesheet" href="../lib/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="../str.css" />
+    <!-- ../ kaze wyszukwać w folderze wcześniejszym -->
+  </head>
+  <body>
+    <header>
+      <div id="logotyp">
+        <h1 class="logo">
+          <span style="color: #1a1105">Zamki obronne w Polsce </span>
+        </h1>
+      </div>
+    </header>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">Strona główna</a></li>
+        <li><a href="#">O projekcie</a></li>
+        <li><a href="#">Materiały</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </nav>
+    <!-- tutaj zaczyna się treść str -->
+    <div class="container">
+      <h2>Lista zamków obronnych w Polsce</h2>
+      <!-- wystylizować modala -->
+      <div class="search">
+        <h2>Wyszukiwanie</h2>
+        <from>
+    <input type = "text" name ="zamki" id="zamki_filter"/>
+
+      <div id="lista">Lista zamków obronnych w Polsce</div>
+
+      <div id="mymap"></div>
+    </div>
+
+    <script src="../lib/leaflet/leaflet.js"></script>
+    <script src="../lib/jquery-3.6.0.js"></script>
+    <script src="./mapa_zamki.js"></script>
+    <script src="./aktualnosci.js"></script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+#mymap {    
+    float: right;
+    height: 67vh; 
+/* 70% wysokości strony internetowej  */
+    width: 60vw;
+/* 60% szerokości strony internetowej  */
+    border-radius: 4px;
+    margin-top: 2rem;
+    border: 1px solid hsl(120, 11%, 22%);
+}
+.container{
+    margin: 1rem;
+    width: 90%;
+    margin: 1rem;
+}
+/* to co jest oznaczone jako div id wywołuje się #, a klasy wywołuje się jako . */
+
+#lista {
+    float:left;
+    width: 20vw;
+    padding: 1rem;
+    /* REM- weź wymiar swojego diva który jest contenerem <ODSTĘP> i pomnóż go dwukrotnie  */
+    margin-top: 1rem;
+    background-color: hsl(120, 11%, 22%);
+    height: 67vh;
+    overflow: auto;
+    /* włączamy mozliwość scrollowania wewnątrz diva */
+    border-radius: 4px;
+
+}
+#lista::-webkit-scrollbar{    
+    display:none
+    /* usuwa suwak ze scrolla */
+}
+
+.item{
+    background-color: lightgray;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    color: black;
+}   
+
+.item:hover{
+        background-color: #52a873e0;}
+
+
+.grubas{
+    font-weight: bold;
+}
+
+
+input {
+    margin-right: 800px;
+    width: 21.5vw;
+    height: 4vh;
+    font-size: 1em;
+}
